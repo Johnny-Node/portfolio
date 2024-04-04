@@ -107,7 +107,7 @@ nav:hover ul li.now::after {position: absolute; left: 0; bottom: 0; content: '';
 .portfolio dl dt:not(:last-of-type)::after {content: ''; display: inline-block; position: absolute; top:50%; right: -15px;  transform: translateY(-50%); width: 1px; height: 24px; border-right: 1px solid #000;}
 .portfolio dl dt.now {background-color: #000;color: #fff;}
 .portfolio dl dd {
-  display: none; position: absolute; top:50px; left:0px;  width: 100%; height: 100%; background-color: #318d3d30;
+  display: none; position: absolute; top:50px; left:0px;  width: 100%; height: 100%;
   /* background: url(../images/nightSky1.jpg) no-repeat center/cover; */ animation: pofolAni 0.4s; overflow: hidden;
 }
 .portfolio dl dd.now {display: flex; justify-content: center; align-items: center; padding: 40px; gap:40px; opacity: 1; box-sizing: border-box;}
@@ -139,7 +139,7 @@ nav:hover ul li.now::after {position: absolute; left: 0; bottom: 0; content: '';
 @media (max-width:1100px){
   .portfolio dl dd h3 {display: block; margin-bottom: 4px;}
   .portfolio dl dd .sub_title {margin-left: 0; margin-bottom: 8px;}
-  .portfolio .description li {margin-bottom: 8px;}
+  .portfolio .description li {}
 }
 
 @media (max-width:1010px) {
@@ -172,7 +172,13 @@ nav:hover ul li.now::after {position: absolute; left: 0; bottom: 0; content: '';
   
 } 
 @media (max-width:760px){
-  .portfolio dl dt { font-size: 1em;}
+  nav ul {justify-content: center;padding: 10px; gap:10px;}
+  nav ul li { font-size: 1em;}
+  .portfolio dl {display: block; padding-top: 20px;}
+  .portfolio dl dt { font-size: 1em; margin-bottom: 1em;}
+  .portfolio dl dt.now {position: absolute; left: 50%; transform: translate(-50%,-100%);}
+  .portfolio dl dt:not(:last-of-type)::after {display: none;}
+  /* .portfolio dl dd {position: static;} */
   .portfolio dl dd.now {display: block; font-size: 1em; text-align: center; }
   .portfolio dl dd div.monitor {display: flex; justify-content: center; align-items: center; margin-bottom: 1em;}
   .portfolio dl dd div.monitor>img{display: block;}
@@ -185,6 +191,8 @@ nav:hover ul li.now::after {position: absolute; left: 0; bottom: 0; content: '';
   .portfolio .description li.btns .btn a {text-align: center;}
   /* .portfolio dl dd .content>ul li p b {border: none;} */
 } 
-@media (max-height:760px){
- 
+@media (max-height:860px){
+  .portfolio .description li{
+    margin-bottom: 0;
+  }
 } 

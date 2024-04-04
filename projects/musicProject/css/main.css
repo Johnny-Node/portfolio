@@ -1,0 +1,187 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'Treegarden';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_10@1.0/Treegarden.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'YUniverse-B';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {margin:0; padding: 0;}
+li {list-style: none;}
+a {text-decoration: none; color: inherit;}
+
+html, body {height: 100%; min-height: 684px;}
+body {font-family: 'Pretendard-Regular'; color:#333;}
+
+:root{
+  --main-green : #093329;
+}
+
+#wrap {width: 100%; min-width: 1200px; height: 200%;}
+#wrap .lyrics_bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 20%; min-width: 240px; height: 100%; min-height: 684px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.6) 4%, rgba(255, 255, 255, 0.2) 96%, rgba(255, 255, 255, 0.6) 100% ), url(../images/lyrics_bg.jpg); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 2;
+}
+#wrap .lyrics_bg .lyrics {display: flex; flex-direction: row-reverse; justify-content: center; align-items: center; width: 100%; height: 100%; color:#fff; font-family: 'Treegarden'; font-size: 40px;  font-weight: bold; text-shadow: 0px 0px 10px #fff; box-sizing: border-box; word-wrap: break-word;}
+#wrap .lyrics_bg .lyrics p {width: 36px; opacity: 0; text-align: center; line-height: 1.2em;}
+#wrap .lyrics_bg .lyrics .first {}
+#wrap .lyrics_bg .lyrics .second {margin-right:20%; display: block;}
+#player {width: 80%; height: 50%; margin-left: 20%; vertical-align: bottom;}
+#wrap .bottom {width: 80%; height: 50%; margin-left: 20%; overflow: hidden;}
+.bottom>ul {position: relative; display: flex; width: 200%; height: 100%;}
+.bottom>ul>li {width: 50%; height: 100%;}
+/* animation_area */
+.animation_area {display: flex;}
+.animation_area .tree_box, .sea_box {position: relative; width: 50%;height: 100%; }
+.animation_area .tree {position: absolute; left: 0; bottom: 0; width: 120%; z-index: 1;}
+.animation_area .sea_ani {position: absolute; left: 0; bottom: -40px; width: 100%;}
+.animation_area .leaf {position: absolute; width: 100px; display: none;}
+.animation_area .drop {position: absolute; width: 60px; display: none;}
+.tree_mouse, .sea_mouse {opacity: 0; position: absolute; padding-left: 20px; pointer-events: none; font-weight: bold;}
+.tree_box:hover, .sea_box:hover {cursor: pointer;}
+.tree_box .tree_mouse {z-index: 999; color:#044904;}
+.sea_box .sea_mouse {z-index: 999; color:#0c51aa;}
+
+/* bottom 각 area 이동 버튼 */
+.bottom>ul .animation_area>.next_btn {position: absolute; top:0; right:0; width: 60px; height: 100%; background-image: linear-gradient(to right,rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.6)); box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.04); opacity: 0.6; transition: 0.6s;}
+.bottom>ul .animation_area>.next_btn:hover {cursor: pointer; opacity: 1;}
+.bottom>ul .card_area {position: relative; width: 50%;}
+.bottom>ul .card_area>.prev_btn {position: absolute; top:0; left:0; width: 60px; height: 100%; background-image: linear-gradient(to left,rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.6)); box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.04); opacity: 0.6; transition: 0.6s; z-index: 1;}
+.bottom>ul .card_area>.prev_btn:hover {cursor: pointer; opacity: 1;}
+.bottom>ul>.animation_area {position: relative; background: url(../images/animation_bg.png) no-repeat center/cover;}
+.bottom>ul .card_area {position: relative; width: 50%;}
+.bottom>ul>.card_area>ul {width: 400%; height: 100%;}
+.card_area .top_bg {position: absolute; top: 0;left: 0; width: 100%; height: 10%; background-color: #000; background-image: linear-gradient(90deg, #1abe3010,#1abe3010);}
+.card_area .bottom_bg {position: absolute;bottom: 0;left: 0; width: 100%; height: 10%; background-color: #000; background-image: linear-gradient(90deg, #1abe3010,#1abe3010);}
+/* card 공통사항 */
+.card {display: flex; align-items: center; width: 25%; height: 100%;}
+.card>dl {width: 100%; height: 80%; background: rgba(255, 255, 255, 0.4);}
+/* card 개별 */
+.card1 {
+  position: relative;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url(../images/forest.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.card1 dl {position: relative;}
+.card1 dl dd{display: none; position: absolute; top:10%; left:0; width: 100%; height: 70%;}
+/* .card1 dl dd[class^=album] {position: absolute; top:10%; left:0; width: 100%; height: 70%;}
+.card1 dl dd[class^=photo] {position: absolute; top:10%; left:0; width: 100%; height: 70%;} */
+/* .card1 .album {position: relative;} */
+/* .card1 .album::after {display: block; content: ''; clear: both;} */
+/* .card1 .album dt {margin-left:-12%;} */
+
+.card1 dl dd div[class^=album] {position: absolute; top:0; left: 50%; transform: translateX(-50%); width: 40%; height: 100%;}
+/* .card1 dl dt.photo {transform: translateX();} */
+.card1 dl dd .album_img {/* transform: translateY(-54%) translateX(-50%); */ background: url(../images/yuyeong.jpeg) no-repeat center/contain, #093329; box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.6); transition: 0.6s;}
+.card1 dl dd .album_img:hover, .card1 dl dd .album_img.clicked:hover {cursor:pointer; scale: 1.01; box-shadow: 16px 16px 8px 8px rgba(0, 0, 0, 0.6);}
+.card1 dl dd .album_img:active, .card1 dl dd .album_img.clicked:active {cursor:pointer; box-shadow: inset 8px 8px 8px 8px rgba(0, 0, 0, 0.6);}
+.card1 dl dd .album_text {padding: 40px; overflow-y: scroll; transform: translateY(-54%) translateX(8%); box-sizing: border-box; background-color: #ffffff60; display: none; transition: 0.6s; opacity: 0; border-radius: 20px 0 20px 0; word-break: keep-all;}
+.card1 dl dd .album_text .text_top {font-size: 16px; font-weight: bold; margin-bottom: 3em;}
+.card1 dl dd .album_text .text_bottom {font-size: 14px; line-height: 1.8;}
+.card1 dl dd .album_text::-webkit-scrollbar{
+  width: 6px; 
+}
+.card1 dl dd .album_text::-webkit-scrollbar-thumb {height: 10%; background-color: #1964199a; background-clip: padding-box; border: 1px solid transparent;}
+.card1 dl dd .album_text::-webkit-scrollbar-track {
+  
+}
+.card1 dl dd .album_img.clicked {left:26%; box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.6);}
+.card1 dl dd .album_text.show {display: block; opacity: 0; left:74%; box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.6); }
+.card1 dt.photo_title {opacity: 1;}
+/* .card1 .photo dt {margin-left: 12%;} */
+/* card1 카테고리 설정 */
+.card1>dl>dt {position: absolute; bottom: 40px; left: 50%; height: 52px; padding-bottom: 4px; transform: translateX(-50%); width: 160px; font-size: 40px; font-weight: bold; font-family: 'YUniverse-B'; text-align: center;  text-transform: uppercase; box-sizing: border-box; color:#49494996;}
+.card1>dl>dt:hover {cursor: pointer;}
+.card1>dl>dt::after {position: absolute; left:50%; display: block; content: ''; width: 1px; border-bottom: 4px double currentColor; transition: 0.3s; opacity: 0;}
+.card1>dl>dt:hover::after {opacity: 1; transform: scaleX(160); border-color: currentColor
+  ;}
+  .card1>dl>dt:nth-of-type(1) {left: 38%;}
+  .card1>dl>dt:nth-of-type(2) {left: 62%;}
+.card1>dl>dt.choosed { border-bottom: 4px double currentColor; text-shadow: 0px 0px 10px rgba(233, 233, 233, 0.87); color:var(--main-green);}
+.card1>dl>dt.choosed + dd {display: block;}
+
+
+/* .photo_contents */
+.photo_contents {display: flex; justify-content: center;}
+.photo_contents>ul {
+  position: relative;
+  /* display: flex; flex-wrap: nowrap; align-items: flex-end; justify-content: space-between; */
+  width: 70%;
+  height: 100%;
+  margin:0 auto;
+}
+li[class^=photo] {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:40%;
+  height:92%;
+  border-radius: 20px;
+}
+li.photo {position: absolute; left: 50%; width: 0; transition: 0.2s; opacity: 0; box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);}
+li.photo.prev {position: absolute; top: 5%; left: 0px; width:40%;
+  height:92%; z-index: 2; opacity: 1;}
+li.photo.next {position: absolute; top: 5%; left: 100%; transform: translateX(-100%); width:40%;
+  height:92%; z-index: 2; opacity: 1;
+  /* animation: photoAni .4s; */
+}
+li.photo.now {
+  position: absolute;
+  top: 6%;
+  left: 54%;
+  transform: translateX(-50%);
+  scale: 1.2;
+  width: 50%;
+  z-index: 3;
+  backface-visibility: hidden;
+  opacity: 1;
+  /* animation: photoAni .4s; */
+}
+.photo_btns>div {padding: 10px; font-size: 2em; color:#777; transition: 0.3s;}
+.photo_btns>div:hover {cursor: pointer; color:#000;}
+
+@keyframes photoAni {
+  0% {opacity: 1;}
+  10% {opacity: 0;}
+  100% {opacity: 1;}
+}
+/* btns */
+.card_box .card1 dl>.photo_contents .btns {position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); width: 114%; height: 50px; display: flex; justify-content: space-between; align-items: center;  z-index: 3; font-size: 30px; font-weight: bold;}
+/* .btns .prev_btn {position: absolute;left: 0;top: 0;}
+
+.btns .next_btn {position: absolute; right: 0;top: 0;} */
+/* 포토 이미지 */
+.photo1 {background-image: url(../images/yuyeong_1.jpeg); background-position: center;}
+.photo2 {background-image: url(../images/yuyeong_2.jpeg); background-position: bottom;}
+.photo3 {background-image: url(../images/yuyeong_3.jpeg); background-position: center;}
+.photo4 {background-image: url(../images/yuyeong_4.jpeg); background-position: bottom;}
+.photo5 {background-image: url(../images/sea.jpg); background-position: bottom;}
+
+.card2 {}
+.card3 {}
+.card4 {}
+
+
+/* 작업 확인용 */
+/* .bottom>ul {left:-100%;} */

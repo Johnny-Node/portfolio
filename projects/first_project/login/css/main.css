@@ -1,0 +1,87 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+* {margin:0; padding:0;}
+li {list-style:none;}
+a {text-decoration: none; color:inherit;}
+img {display: block;}
+input {border: transparent; outline: none;}
+button {border: none;}
+
+body {font-family: 'Noto Sans KR', sans-serif; color: #333; background-color: #fff;}
+
+.entire {min-width:320px;}
+#wrap {width: 100%; padding:20px; overflow: hidden; box-sizing: border-box;}
+#logo {width:100px; margin:50px auto;}
+#logo img {width: 100px;}
+.id {position: relative; width: 100%;}
+.id input {width: 100%; height: 20px; padding:16px 0; border-bottom: 1px solid #ccc; font-size: 18px; box-sizing: border-box;}
+.id input::placeholder {color:#999;}
+.id button {display: none; position: absolute; top:10px; right: 10px; width: 20px; height: 20px; border-radius:50%; font-weight:bold; font-size: 18px; color:#fff; background-color: #ccc;}
+.id .tip {display: none; font-size: 12px; padding:8px 0;}
+.id .tip span {color:crimson; font-weight: bold;}
+
+.password {position: relative; width: 100%;}
+.password input {width: 100%; height: 20px; padding:20px 0; margin-top: 16px; border-bottom: 1px solid #ccc; font-size: 18px; box-sizing: border-box;}
+.password input::placeholder {color:#999;}
+.password button {display: none; position: absolute; top:10px; right: 10px; width: 20px; height: 20px; border-radius:50%; font-weight:bold; font-size: 18px; color:#fff; background-color: #999;}
+/* 간편로그인 정보 저장 */
+input[type=checkbox] {display: none;}
+.ezLogin {overflow: hidden;}
+.ezLogin .save {float: left; line-height: 20px; margin: 24px 0;}
+.save::before {float: left; display: block; content: ''; width: 18px; height: 18px; margin-right:10px; border : 2px solid #999; border-radius: 50%;}
+.save::after {float: right; display: block; content: 'i'; width: 18px; height: 18px; margin-left:10px; margin-top: 4px; text-align: center; border : 1px solid #999; border-radius: 50%; color:#999; font-size: 14px; font-weight: bold; line-height: 16px;}
+/* 로그인 */
+.login {width: 100%; height: 50px; line-height:50px; border-radius: 6px; text-align: center; font-weight: 400; background-color: #79E1EE;}
+.or {position: relative; width: 100%; height: 50px;}
+.or span {display: block; width: 40px; line-height:50px; margin: 0 auto; text-align: center; font-size: 12px; font-weight: 400; background-color: #fff;}
+/* .login+span::before {display:inline-block; content: ''; width:calc(50% - 20px); height: 1px; margin-bottom: 0.5em; border-bottom: 1px solid #999;}
+.login+span::after {display:inline-block; content: ''; width:calc(50% - 20px); height: 1px; border-bottom: 1px solid #999;} */
+.or .line {position: absolute; top:50%; left: 0; width: 100%; height: 1px; border-bottom: 1px solid #999; z-index: -1;}
+.loginQr {width: 100%; height: 50px; line-height:50px; border-radius: 6px; text-align: center; font-weight: 400; background-color: #FBFFDC;}
+/* 회원가입, 계정찾기 */
+.join_find {width: 100%; overflow: hidden; margin:26px 0; font-size: 12px; font-weight: 400;}
+.join_find .join {float: left;}
+.join_find .find {float: right;}
+.join_find .find .find_id {height: 10px; line-height: 12px; padding-right: 10px;}
+.join_find .find .find_id::after {display: inline-block; content: ''; height: 10px; line-height: 12px; padding-right: 10px; border-right: 1px solid #ccc;}
+
+footer {position: relative; bottom: 0; left:0; display: flex; flex-wrap:wrap; justify-content:center; width: 100vw; min-width:320px; height: 50px; padding:10px 0; border-top: 1px solid #999; font-size: 12px;}
+footer .footerBox {display: flex; flex-wrap:wrap; width: 100%; text-align: center;}
+footer .footerBox ul {overflow: hidden; margin:0 auto;}
+footer .footerBox ul li {float: left; height: 20px; margin: 2px 4px; box-sizing: border-box;}
+/* footer .footerBox ul li:nth-child(6){margin: 2px 0 2px 4px;} */
+/* footer .footerBox ul li:last-child {margin: 2px 0;} */
+footer .footerBox ul li:nth-child(2) {font-weight: bold;}
+footer .footerBox ul li:last-child {overflow: hidden; display: flex; align-items: center;}
+footer .footerBox ul li:last-child select {font-size: 12px;}
+footer .footerBox ul li:last-child option {font-size: 14px; padding: 4px;}
+footer .footerBox ul li #lang {border:none; appearance:none;}
+footer .footerBox small {width: 100%;}
+
+/* media - footer 움직임 세로값*/
+@media screen and (min-height:630px) and (max-width:767px) {
+  footer {position: fixed; bottom: 0; left:0;}
+}
+
+@media screen and (max-height:819px) and (min-width:768px){
+  .entire {width:580px; margin: 0 auto;}
+  /* #wrap {width: 580px;} */
+  #wrap .inner {padding:70px; border: 1px solid #ccc;}
+  #wrap .inner .join_find {margin-bottom: 0;}
+  footer {width:580px; height: 50px; padding-top: 40px; border: none;}
+}
+
+@media screen and (min-height:820px) and (min-width:768px) {
+  .entire {display: flex; height: 100vh; flex-direction:row; flex-wrap: wrap; justify-content: center; align-content: center;}
+
+  #wrap {width:580px;}
+  #wrap #logo {margin-top: 0;}
+  #wrap .inner {padding:70px; border: 1px solid #ccc;}
+  #wrap .inner .join_find {margin-bottom: 0;}
+  
+  footer {height: 50px; padding-top: 40px; border: none;}
+}
+
+/* media - min-width768 */

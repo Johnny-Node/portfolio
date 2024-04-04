@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidmool</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="icon" href="./images/favicon.ico">
+</head>
+<body>
+  <header>
+    <div class="inner">
+      <h1 class="logo"><a href="#"><img src="./images/logo.png" alt="시드물"></a></h1>
+      <nav>
+        <ul>
+          <li class="hall_menu">
+            <a href="#">
+            전체메뉴
+            </a>
+          </li>
+          <li><a href="#">베스트</a></li>
+          <li><a href="#">신제품</a></li>
+          <li><a href="#">이벤트</a></li>
+          <li><a href="#">시드물소개</a></li>
+        </ul>
+      </nav>
+      <div class="icons">
+        <div class="search">
+          <input type="text">
+          <iconify-icon icon="ion:search-outline" class="magnifier"></iconify-icon>
+        </div>
+        <div class="basket">
+          <a href="#">
+            <iconify-icon icon="simple-line-icons:basket"></iconify-icon>
+          </a>
+        </div>
+        <div class="private">
+          <a href="#">
+            <iconify-icon icon="uiw:user"></iconify-icon>
+          </a>
+        </div>
+      </div>
+      <ul class="sub_menu">
+        <li>
+          <a href="#">
+          카테고리
+          </a>
+          <ul>
+            <li><a href="#">비누/클렌징</a></li>
+            <li><a href="#">마스크/팩/필링</a></li>
+            <li><a href="#">스킨/토너/미스트</a></li>
+            <li><a href="#">앰플/에센스/세럼</a></li>
+            <li><a href="#">수분젤/에센셜</a></li>
+            <li><a href="#">로션</a></li>
+            <li><a href="#">크림</a></li>
+            <li><a href="#">썬케어</a></li>
+            <li><a href="#">오일</a></li>
+            <li><a href="#">바디/헤어/핸드</a></li>
+            <li><a href="#">메이크업</a></li>
+            <li><a href="#">립/아이</a></li>
+            <li><a href="#">건강식품</a></li>
+            <li><a href="#">소품</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+          기능/고민
+          </a>
+          <ul>
+            <li><a href="#">트러블/시카</a></li>
+            <li><a href="#">민감/건조/속당김</a></li>
+            <li><a href="#">미백/화이트닝/흔적</a></li>
+            <li><a href="#">안티에이징/주름/탄력</a></li>
+            <li><a href="#">모공/피지/블랙헤드</a></li>
+            <li><a href="#">각질관리</a></li>
+            <li><a href="#">장벽케어</a></li>
+            <li><a href="#">무기자차</a></li>
+            <li><a href="#">레이저관리</a></li>
+            <li><a href="#">탈모케어</a></li>
+            <li><a href="#">동물성프리</a></li>
+            <li><a href="#">예비맘</a></li>
+            <li><a href="#">미취학</a></li>
+            <li><a href="#">청소년</a></li>
+            <li><a href="#">남성화장품</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+          성분별
+          </a>
+          <ul>
+            <li><a href="#">EGF/FGF/IGF</a></li>
+            <li><a href="#">콜라겐</a></li>
+            <li><a href="#">히알루론산</a></li>
+            <li><a href="#">병풀/센텔라</a></li>
+            <li><a href="#">판테놀</a></li>
+            <li><a href="#">레티놀</a></li>
+            <li><a href="#">녹차/EGCG</a></li>
+            <li><a href="#">알로에</a></li>
+            <li><a href="#">어성초</a></li>
+            <li><a href="#">아하/바하/파하</a></li>
+            <li><a href="#">징크</a></li>
+            <li><a href="#">봉독/프로폴리스</a></li>
+            <li><a href="#">호호바</a></li>
+            <li><a href="#">달팽이</a></li>
+            <li><a href="#">카렌듈라</a></li>
+            <li><a href="#">동백</a></li>
+            <li><a href="#">티트리</a></li>
+            <li><a href="#">무오일</a></li>
+            <li><a href="#">세라마이드</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+          임상별
+          </a>
+          <ul>
+            <li><a href="#">여드름/논코메도제닉</a></li>
+            <li><a href="#">비건인증</a></li>
+            <li><a href="#">항산화임상</a></li>
+            <li><a href="#">주름/탄력임상</a></li>
+            <li><a href="#">기미/잡티/피부톤임상</a></li>
+            <li><a href="#">모공임상</a></li>
+            <li><a href="#">보습/장벽/피부결임상</a></li>
+            <li><a href="#">안자극완료</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+          시드물2
+          </a>
+          <div class="sidmool2">
+            <a href="#">
+              <p>
+                시드물1 물류 창고가 가득차서 시드물2를 새롭게 만들었습니다.<br/>
+                시드물1과 시드물2 제품을 함께 구매하실 수는 있지만,<br/>
+                시드물1과 시드물2는 같은 박스에 묶음 배송이 되지 않고 각 각 다른 박스로 배송이 됩니다.
+              </p>
+              <img src="./images/warehouse.png" alt="물류창고 이미지">
+            </a>
+          </div>
+        </li>
+        <li>
+          <a href="#">
+          커뮤니티
+          </a>
+          <ul>
+            <li><a href="#">시사모</a></li>
+            <li><a href="#">시드물통신</a></li>
+            <li><a href="#">상품문의</a></li>
+            <li><a href="#">전 어떻게 써요?</a></li>
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">미생물&방사능 검사</a></li>
+            <li><a href="#">텍스트 사용후기</a></li>
+            <li><a href="#">포토사용 후기</a></li>
+            <li><a href="#">성분사전</a></li>
+            <li><a href="#">해외배송문의</a></li>
+            <li><a href="#">시드물 매니아</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+          마이 페이지
+          </a>
+          <ul>
+            <li><a href="#">주문조회</a></li>
+            <li><a href="#">장바구니</a></li>
+            <li><a href="#">최근본상품</a></li>
+            <li><a href="#">위시리스트</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <div class="sub_menu_bg"></div>
+  <div class="swiper mainSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide main1">
+        <a href="#">
+          <div class="content">
+            <!-- <figure> -->
+              <img src="./images/slide1.png" alt="닥터트럽 클렌징 밀크">
+            <!-- </figure> -->
+            <div class="text_box">
+              <p>
+                <strong class="title">닥터트럽<br/>클렌징 밀크</strong>
+                <b>장벽 관리 & 민감한 문제성 피부를 위한 클렌징</b>
+              </p>
+              <ul>
+                  <li>#논-코메도제닉</li>
+                  <li>#여드름성 피부</li>
+                  <li>#적합 임상 테스트 완료</li>
+                  <li>#500ml 대용량 출시</li>
+              </ul>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-slide main2">
+        <a href="#">
+          <div class="content">
+            <!-- <figure> -->
+              <img src="./images/slide2.png" alt="스킨소스 5나노 히알루론산 앰플 12ml">
+            <!-- </figure> -->
+            <div class="text_box">
+              <p>
+                <strong class="title">스킨소스<br/>5나노 히알루론산 앰플</strong>
+                <b>건조함, 푸석함, 당기는 속건조 고민 해결</b>
+              </p>
+              <ul>
+                  <li>#5나노 히알루론산 12,000ppm</li>
+                  <li>#집중 수분 관리</li>
+                  <li>#고농축 수분 앰플</li>
+                  <li>#피부 속부터 수분 물광</li>
+              </ul>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-slide main3">
+        <a href="#">
+          <div class="content">
+            <!-- <figure> -->
+              <img src="./images/slide3.png" alt="피브로블라스트 앰플">
+            <!-- </figure> -->
+            <div class="text_box">
+              <p>
+                <strong class="title">피브로블라스트 앰플 30ml</strong>
+                <b>붉은 피부, 깊은 주름, 탄력 개선</b>
+              </p>
+              <ul>
+                  <li>#bFGF 고함량 20PPM 99%</li>
+                  <li>#저온 리포좀화 공법</li>
+                  <li>#적합 임상 테스트 완료</li>
+                  <li>#냉장 보관 추천</li>
+              </ul>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="swiper-button-prev btn"><iconify-icon icon="icon-park-solid:left-c"></iconify-icon></div>
+    <div class="swiper-button-next btn"><iconify-icon icon="icon-park-solid:right-c"></iconify-icon></div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="containe">
+    <div class="items">
+      <div class="category inner">
+        <h2><strong>시드물.</strong><b>자연과 피부를 사랑하는 공간.</b></h2>
+        <ul class="clearFix">
+          <li>
+            <figure>
+              <a href="#">
+                <img src="./images/skincare.png" alt="스킨케어">
+                <figcaption>스킨케어</figcaption>
+              </a>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <a href="#">
+                <img src="./images/soap.png" alt="클렌징">
+                <figcaption>클렌징</figcaption>
+              </a>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <a href="#">
+                <img src="./images/peeling.png" alt="마스크/팩/필링">
+                <figcaption>마스크/팩/필링</figcaption>
+              </a>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <a href="#">
+                <img src="./images/suncream.png" alt="선케어">
+                <figcaption>선케어</figcaption>
+              </a>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <a href="#">
+                <img src="./images/shampoo.png" alt="바디/헤어">
+                <figcaption>바디/헤어</figcaption>
+              </a>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <a href="#">
+                <img src="./images/tint.png" alt="메이크업">
+                <figcaption>메이크업</figcaption>
+              </a>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <a href="#">
+                <img src="./images/enzyme.png" alt="건강식품">
+                <figcaption>건강식품</figcaption>
+              </a>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <a href="#">
+                <img src="./images/puff.png" alt="소품">
+                <figcaption>소품</figcaption>
+              </a>
+            </figure>
+          </li>
+        </ul>
+      </div>
+      <div class="new">
+        <div class="new_contents inner">
+          <h2 class="inner"><b>신제품.</b><span>더 새로운 변화.</span></h2>
+          <div class="swiper newSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide new1">
+                <a href="#">
+                  <p class='prod_text'>
+                    매트릭실 3000 30% 민감 탄력 주름 굴곡 케어!
+                    <strong>스킨소스 매트릭실 30 앰플 12ml</strong>
+                    <span>14,100원</span>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide new2">
+                <a href="#">
+                  <p class='prod_text'>
+                    라하+율무+판테놀 조합! 피지,요철,각질,모공 케어!
+                    <strong>라하 요철 제로 에센스 30ml</strong>
+                    <span>26,800원</span>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide new3">
+                <a href="#">
+                  <p class='prod_text'>
+                    5나노 히알루론산 초미세 흡수력!
+                    <strong>스킨소스 5나노 히알루론산 앰플 12ml</strong>
+                    <span>32,000원</span>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide new4">
+                <a href="#">
+                  <p class='prod_text'>
+                    탄력의 제왕! 고순도 고함량 이데베논 집중 케어 앰플
+                    <strong>스킨소스 이데베논 3만 앰플 12ml</strong>
+                    <span>12,800원</span>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide new5">
+                <a href="#">
+                  <p class='prod_text'>
+                    여드름 약산성 세안제 트러블 케어 리필용 구매 가능!
+                    <strong>닥터트럽 트러블 클렌져 300ml / 리필용 500ml</strong>
+                    <span>18,300원</span>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide new6">
+                <a href="#">
+                  <p class='prod_text'>
+                    바르는 MTS! 스피큘 300샷 마니 앰플!
+                    <strong>민중기 시카지에프 스피큘 앰플 30ml</strong>
+                    <span>28,600원</span>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide new7">
+                <a href="#">
+                  <p class='prod_text'>
+                    진짜 순하고 진짜 빠른 진정 케어! 산뜻 촉촉 디판테놀 수딩젤
+                    <strong>리얼순 레드트럽 디판테놀 수딩젤 165ml</strong>
+                    <span>16,800원</span>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide new8">
+                <a href="#">
+                  <p class='prod_text'>
+                    흡수에 집중한 나노 트라넥사믹! 잡티, 화이트닝 케어!
+                    <strong>스킨소스 나노 트라넥사믹 블래미쉬 앰플 30ml</strong>
+                    <span>9,800원</span>
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-button-prev btn"><iconify-icon icon="icon-park-solid:left-c"></iconify-icon></div>
+            <div class="swiper-button-next btn"><iconify-icon icon="icon-park-solid:right-c"></iconify-icon></div>
+          </div>
+          <!-- <a class="prev arrow" hre<p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  <strong>Lorem ipsum dolor sit amet</strong>
+                  <span>22,000</span>
+                </p>">
+            <iconify-icon icon="icon-park-solid:left-c"></iconify-icon>
+          </a> -->
+        </div>
+      </div>
+      <div class="best">
+        <div class="best_contents inner">
+          <h2 class="inner"><b>베스트 아이템.</b><span>꾸준한 인기. 더 많은 사랑</span></h2>
+          <div class="swiper bestSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide best1">
+                <a href="#">
+                  <p class='prod_text'>
+                    초 민감성, 장벽강화 다당류 보습
+                    <strong>마다가스카르 리얼 수분크림 80g</strong>
+                    <span>23,800원</span>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide best2">
+                <a href="#">
+                  <p class='prod_text'>
+                    리포좀 EGF 50PPM 20% 적용 리페어/주름개선
+                    <strong>민중기 EGF 앰플 11ml</strong>
+                    <span>39,800원</span>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide best3">
+                <a href="#">
+                  <p class='prod_text'>
+                    오일프리/확실한장벽케어 영국산 D-판테놀 30%
+                    <strong>스킨소스 D-판테놀 앰플12ml/32ml</strong>
+                    <span>11,800원</span>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide best4">
+                <a href="#">
+                  <p class='prod_text'>
+                    순수 무기차단제 100 NO옥시벤존/NO옥티녹세이트
+                    <strong>민중기 무기자차 썬크림 SPF40 PA++</strong>
+                    <span>16,400원</span>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide best5">
+                <a href="#">
+                  <p class='prod_text'>
+                    장벽 강화/약산성 촉촉한 딥 클렌징
+                    <strong>닥터트럽 클렌징 밀크 200ml/500ml</strong>
+                    <span>17,680원</span>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide best6">
+                <a href="#">
+                  <p class='prod_text'>
+                    시카, 탄력, 미백 한번에! 데일리 흔적 케어
+                    <strong>레티놀 흔적 리페어 앰플 30ml</strong>
+                    <span>21,800원</span>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide best7">
+                <a href="#">
+                  <p class='prod_text'>
+                    탄력있는 매끄러운 피부 30ml 대용량
+                    <strong>민중기 보르피린 앰플 30ml</strong>
+                    <span>73,900원 </span>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide best8">
+                <a href="#">
+                  <p class='prod_text'>
+                    바이오 기능성 화장품 rh-bFGF 20PPM 99%
+                    <strong>민중기 피브로블라스트 앰플 30ml</strong>
+                    <span>95,000원</span>
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-button-prev btn"><iconify-icon icon="icon-park-solid:left-c"></iconify-icon></div>
+            <div class="swiper-button-next btn"><iconify-icon icon="icon-park-solid:right-c"></iconify-icon></div>
+          </div>
+          <!-- <a class="prev arrow" hre<p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  <strong>Lorem ipsum dolor sit amet</strong>
+                  <span>22,000</span>
+                </p>">
+            <iconify-icon icon="icon-park-solid:left-c"></iconify-icon>
+          </a> -->
+        </div>
+      </div>      
+      <div class="concern">
+        <div class="concern_contents inner">
+          <h2 class="inner"><b>고민별 아이템.</b><span>당신이 필요로 할 때, 당신에게 맞는 방식으로.</span></h2>
+          <div class="swiper concernSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide concern1">
+                <a href="#">
+                  <p class='prod_text'>
+                    <strong>여드름 / 트러블</strong>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide concern2">
+                <a href="#">
+                  <p class='prod_text'>
+                    <strong>미백 / 흔적</strong>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide concern3">
+                <a href="#">
+                  <p class='prod_text'>
+                    <strong>안티에이징 / 주름</strong>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide concern4">
+                <a href="#">
+                  <p class='prod_text'>
+                    <strong>모공 / 피지 / 블랙헤드</strong>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide concern5">
+                <a href="#">
+                  <p class='prod_text'>
+                    <strong>각질관리</strong>
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-button-prev btn"><iconify-icon icon="icon-park-solid:left-c"></iconify-icon></div>
+            <div class="swiper-button-next btn"><iconify-icon icon="icon-park-solid:right-c"></iconify-icon></div>
+          </div>
+        </div>
+      </div>
+      <div class="type">
+        <div class="concern_contents inner">
+          <h2 class="inner"><b>피부 타입별 아이템.</b><span>꼭 필요한 성분을, 꼭 필요한 곳에.</span></h2>
+          <div class="swiper typeSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide type1">
+                <a href="#">
+                  <p class='prod_text'>
+                    <strong>건성 / 악건성</strong>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide type2">
+                <a href="#">
+                  <p class='prod_text'>
+                    <strong>지성 / 과다유분</strong>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide type3">
+                <a href="#">
+                  <p class='prod_text'>
+                    <strong>복합성 / 수분부족지성</strong>
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sidmool_information info">
+        <div class="info_contents inner">
+          <h2 class="inner"><b>시드물 커뮤니케이션.</b><span>당신과 함께. 지역과 함께.</span></h2>
+          <div class="swiper infoSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide commu1">
+                <a href="#">
+                  <div class="thumb"></div>
+                  <p class='text'>
+                    <b>
+                      서울 노원역 루나크의원에 시드물 제품들이.
+                    </b>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide commu2">
+                <a href="#">
+                  <div class="thumb"></div>
+                  <p class="text">
+                    <b>
+                      대전 MBC 오늘의면접 촬영했어요.
+                    </b>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide commu3">
+                <a href="#">
+                  <div class="thumb"></div>
+                  <p class='text'>
+                    <b>
+                      방사능 검사 장비로 방사능 측정 중.
+                    </b>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide commu4">
+                <a href="#">
+                  <div class="thumb"></div>
+                  <p class='text'>
+                    <b>
+                      대전 성실납세자로 시드물이 표창장을 수여받았어요
+                    </b>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide commu5">
+                <a href="#">
+                  <div class="thumb"></div>
+                  <p class='text'>
+                    <b>
+                      시드물 고향마을 체육대회에 다녀왔어요.
+                    </b>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide commu6">
+                <a href="#">
+                  <div class="thumb"></div>
+                  <p class='text'>
+                    <b>
+                      시드물이 동물사랑 실천을 위해 카라에 후원했어요.
+                    </b>
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-button-prev btn"><iconify-icon icon="icon-park-solid:left-c"></iconify-icon></div>
+            <div class="swiper-button-next btn"><iconify-icon icon="icon-park-solid:right-c"></iconify-icon></div>
+          </div>
+        </div>
+      </div>
+      <div class="bbs">
+        <div class="bbs_contents inner">
+          <h2 class="inner"><b>게시판</b><span>소식을 더 빠르게. 더 자세하게.</span></h2>
+          <div class="swiper bbsSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide bbs1">
+                <a href="#">
+                  <p class='prod_text'>
+                    공지사항.
+                  </p>
+                  <img src="./images/bell.png" alt="">
+                </a>
+              </div>
+              <div class="swiper-slide bbs2">
+                <a href="#">
+                  <p class='prod_text'>
+                    고객센터.
+                  </p>
+                  <img src="./images/headset.png" alt="">
+                </a>
+              </div>
+              <div class="swiper-slide bbs3">
+                <a href="#">
+                  <p class='prod_text'>
+                    출석체크.
+                  </p>
+                  <img src="./images/attendance.png" alt="">
+                </a>
+              </div>
+              <div class="swiper-slide bbs4">
+                <a href="#">
+                  <p class='prod_text'>
+                    사은품. 회원등급 혜택.
+                  </p>
+                  <img src="./images/benefit.png" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="banner inner">
+        <div class="banner1">
+          <a href="#">
+            <p class='prod_text'>
+              <b>시드물 자연사랑 캠페인</b>
+        <span>자연의 고향 시드물이 되겠습니다.</span>
+        시드물은 사용 후 공병을 회수 받아서 자연에<br/>부담이 되지 않도록 다양하게 활용하고 처리하겠습니다.
+            </p>
+          </a>
+        </div>
+        <div class="banner2">
+          <a href="#">
+            <p class='prod_text'>
+              <b>시시드물은 동물을 사랑합니다.</b>
+        <span>자연과 함께 하겠습니다.</span>
+        시드물은 동물 실험을 반대하며<br/>자연과 사람이 함께 상생하는 하기 위해 항상 고민합니다.
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  <footer class="inner">
+    <div class="top_box clearFix">
+      <h2 class="footer_logo"><a href="#"><img src="./images/logo.png" alt="시드물 로고"></a></h2>
+      <ul>
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">이용안내</a></li>
+        <li><a href="#">영상정보처리기기 운영/관리 방침</a></li>
+        <li><a href="#">미확인 입금</a></li>
+        <li><a href="#">무이자 할부 혜택</a></li>
+      </ul>
+    </div>
+    <div class="bottom_box">
+      <div class="company">
+        <h3>COMPANY INFO</h3>
+        <p>
+          <span>주식회사 시드물</span>
+          <span>대표 : 민병권</span>
+          <span>개인정보책임자 : 박소진</span><br/>
+          <span>주소 : 대전시 중구 안영로 42(안영동)</span>
+          <span>대표메일 : help@sidmool.com</span>
+          <span>팩스 : 042-367-7989</span><br/>
+          <span>사업자번호 : 305-81-94469</span>
+          <span>화장품 제조판매업 : 등록필증 제 1163호</span>
+          <span>통신판매신고번호 : 제2008-대전중구-0247호</span><br/>
+          <span>건강기능식품일반판매업 : 제 2007-0233493 호</span>
+          <span>건강기능식품유통전문판매업 : 제 2012-0233418 호</span>
+        </p>
+      </div>
+      <div class="bank">
+        <h3>BANK INFO</h3>
+        <p>
+          <b>예금주 : (주)시드물</b>
+          <span>국민은행 : 460001-04-214514</span>
+          <span>농협은행 : 355-0002-8749-13</span>
+          <span>하나은행 : 643-910004-62604</span>
+          <span>신한은행 : 100-027-169517</span>
+          <span>우리은행 : 1005-902-241888</span>
+          <span>우체국은행 : 310037-01-011233</span>
+          <span>기업은행 : 143-122078-01-015</span>
+          <span>부산은행 : 101-2047-1354-09</span>
+        </p>
+      </div>
+      <div class="cs_center">
+        <h3>CS CENTER</h3>
+        <b>1577 - 9638</b>
+        <span>(해외 : +82-42-716-0227)</span>
+        <span>평일 09:00 - 17:00</span>
+        <span>점심시간 12:00 - 13:30</span>
+        <span>토요일, 일요일, 공휴일은 휴무입니다.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>

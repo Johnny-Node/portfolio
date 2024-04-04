@@ -1,0 +1,133 @@
+@charset "utf-8";
+@import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css');
+@font-face {
+  font-family: 'JalnanGothic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+html, body {height: 100%; font-family: 'Pretendard-Regular'; color:#333; background-color: transparent; overflow: hidden; /* scroll-behavior: smooth; */}
+a {text-decoration: none; color: inherit;}
+* {background-color: transparent;}
+video {width: 100%;}
+#wrap {position: absolute; top:0; left:0; width: 100%; height: 100%; transition:1s; background-color: transparent;}
+/* #wrap {position: absolute; top:-953px; left:0; width: 100%; height: 100%; transition:1s; background-color: transparent;} */
+nav {position: fixed; top:0; left:0; width: 100%; height: auto;  transition: 0.4s; z-index: 9999;}
+nav:hover {background-color: #fff; padding-bottom: 10px;}
+nav ul {display: flex; flex-direction: row; justify-content: flex-end; align-items: flex-start; gap:30px;  padding-right: 40px; box-sizing: border-box; height: 100%;}
+nav ul li {position: relative; padding: 20px 20px 8px; font-size: 20px; text-align: center; font-weight: 500; cursor: pointer; color:#333; }
+nav ul li:hover {font-weight: 900;}
+nav ul li.now {font-weight: bold; color:#fff; }
+nav:hover li {color:#333;}
+nav:hover li.now {color:#000;}
+nav ul li::after {position: absolute; left: 50%; bottom: 0; content: ''; width: 0; border: 2px solid transparent; transition: 0.3s;}
+nav ul li.now::after {position: absolute; left: 0; bottom: 0; content: ''; width: 100%; border: 1px solid #fff;}
+nav:hover ul li::after {position: absolute; left: 50%; bottom: 0; content: ''; width: 0; border: 2px solid transparent; transition: 0.3s;}
+nav:hover ul li.now::after {position: absolute; left: 0; bottom: 0; content: ''; width: 100%; border: 1px solid #000;}
+.container {height: 100%; transition: 1s;}
+.container>section {position: relative;width: 100%; height: 100%; overflow: hidden; background-color: transparent;}
+.hero .content {position: absolute; left: 0; top: 0;  display: flex; flex-direction:column; justify-content: center; align-items: center;  width: 100%; height: 100%;}
+.hero .content .title {position: relative; height: 120px; display: block; padding-top: 20px; background-clip: text;}
+.hero .content .title .slogan {
+  position: absolute; right: 0; top: -30%; padding-right:20px; 
+  font-size: 32px; font-weight: bold; text-transform: uppercase; border-right: 4px solid transparent;
+}
+.hero .content .title .slogan.done {border-right: 4px solid #333;}
+.hero .content .title h1 {font-family: 'JalnanGothic'; font-size: 120px; font-weight: bold; text-align: center; color:#fff; text-shadow: 2px 2px 0px #44a4d0,  3px 3px 0px #44a4d0, 4px 4px 0px #44a4d0, 0px 0px 10px #44a4d0; z-index: 1; transition: 0.4s;}
+.hero .content .title h1:hover {
+  font-size: 140px; text-shadow: none; -webkit-text-fill-color: transparent; -webkit-text-stroke: 0.4px #000;
+  cursor: pointer;
+}
+.hero .textEvent {position: absolute; bottom: 0; right: 0; font-size: 48px; box-sizing: border-box;}
+.hero .textEvent.done {width: 262px; border-right: 4px solid #000;}
+.hero .cursor, .hero .cursor2 {position: absolute; left: 0; top: 0; opacity: 0; z-index: 2;}
+.hero .cursor2 {font-weight: bold;}
+.hero .cursor2 .star {display: none;}
+.hero .cursor2 .star.on {display: inline-block;}
+.hero .waterDrop {position: absolute; animation: dropAni 3s; opacity: 0;}
+@keyframes dropAni {
+  0% {opacity: 1;}
+  100% {top: 120%;}
+}
+/* about */
+#about {display: flex; align-items: center; justify-content: center;background-color: #ffffff50; transition: 1s;}
+#about.now {opacity: 1;}
+#about .about_wrapper {height: 0; display: flex; justify-content: center; align-items: center; gap:80px; box-sizing: border-box;  transition: 1.2s; overflow: hidden;}
+#about.now .about_wrapper {height: 100%;}
+#about .about_wrapper .id_img{width: 300px;}
+#about .about_wrapper>ul {width: 600px; background: #ffffff90; padding: 40px; border-radius: 40px 0 40px 0;}
+#about .about_wrapper>ul>li {margin-bottom:30px; padding-bottom: 30px; border-bottom: 2px solid #33333330;}
+#about .about_wrapper>ul>li:last-child {border: none; margin-bottom: 0;}
+#about .about_wrapper>ul h2 {margin-bottom: 10px; font-size: 24px; font-weight: 900; color: #4465d0;}
+#about .about_wrapper>ul .sub_title {display: block; padding-left: 30px; line-height: 30px; font-size: 18px; font-weight: 500; color:#44a4d0;}
+#about .about_wrapper>ul .contact {position: relative;}
+#about .about_wrapper>ul .contact table {border-collapse: separate; border-spacing: 30px 4px;}
+#about .contact tr {line-height: 30px;}
+#about .contact th{font-size: 18px; font-weight: 500; color:#44a4d0;}
+#about .contact .qr_btn {position: absolute; display: flex; align-items: center; padding: 2px 20px; font-weight: 500; background-color: #fae100; transition:0.2s; cursor: pointer; opacity: 0;}
+#about.now .about_wrapper .qr_btn {opacity: 1;}
+#about .contact .qr_btn:hover {background-color: #333333; color:#fae100; font-weight: bold;}
+#about .contact iconify-icon { font-size: 20px;}
+#about .skills {}
+#about .skills>ul{display: flex; gap: 20px; padding-left: 30px;}
+#about .skills li {margin-bottom: 10px;}
+#about .education {}
+#about .education h2{}
+#about .education dl{margin-left: 30px;}
+#about .education dt{position: relative; line-height: 30px; font-weight: bold; margin-bottom: 4px;}
+#about .education dt iconify-icon{left: -28px;top: 4px; position: absolute;}
+#about .education dd{position: relative; font-size: 14px; line-height: 1.2;}
+#about .education dd::before {content: '-'; display: inline-block; position: absolute; left: -10px; top: 0;}
+/* about - qr */
+#about .qr_area {display: none; position: absolute; top: 0;left: 440px; align-items: center; justify-content: flex-end; width: 100%; height: 100%; cursor: pointer;}
+#about .qr_area.on {display: flex;}
+#about .kakao_qr {width: 200px; padding: 120px; background-color: rgba(0, 0, 0, .3); border-radius: 40px 0 0 40px;}
+
+/* portfolio */
+.container .portfolio {display: flex; align-items: center;}
+.portfolio .portfolio_wrapper {width: 100%; height: 80%; padding: 40px 100px; background-color: #CCDDE440;  box-sizing: border-box;}
+.portfolio dl {position: relative; width: 1000px; margin: 0 auto;}
+.portfolio dl dt {position: relative; display: inline-block; padding: 10px 20px; margin-right: 30px; font-size: 24px; font-weight: bold; transition: 0.3s; cursor: pointer;}
+.portfolio dl dt:not(:last-of-type)::after {content: ''; display: inline-block; position: absolute; top:50%; right: -15px;  transform: translateY(-50%); width: 1px; height: 24px; border-right: 1px solid #000;}
+.portfolio dl dt.now {background-color: #000;color: #fff;}
+.portfolio dl dd {
+  display: none; position: absolute; top:50px; left:0px;  height: 600px;
+  /* background: url(../images/nightSky1.jpg) no-repeat center/cover; */ animation: pofolAni 0.4s; overflow: hidden;
+}
+.portfolio dl dd.now {display: flex; justify-content: space-between; align-items: center; opacity: 1;}
+@keyframes pofolAni {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
+}
+
+.portfolio dl dd div.monitor {position: relative; }
+.portfolio dl dd div.monitor img{position: relative; height: 400px; z-index: 1;}
+.monitor .thumbnail {position: absolute; left: 1px; top: 10px; width: 98%; height: 314px;}
+dd:nth-of-type(1) .monitor .thumbnail {background: url(../images/nike.png) no-repeat left top/cover;}
+dd:nth-of-type(2) .monitor .thumbnail {background: url(../images/edam.png) no-repeat left top/cover;}
+dd:nth-of-type(3) .monitor .thumbnail {background: url(../images/music_project.png) no-repeat left top/cover;}
+dd:nth-of-type(4) .monitor .thumbnail {background: url(../images/sidmool.png) no-repeat left top/cover;}
+dd:nth-of-type(5) .monitor .thumbnail {background: url(../images/firstProject.png) no-repeat left top/cover;}
+
+.portfolio dl dd div.monitor {position: relative;}
+.content {width: 600px; height: 400px; padding: 0 40px; box-sizing: border-box;  word-break: keep-all;}
+.portfolio dl dd h3 {display: inline-block; font-size: 30px; font-weight: bold; margin-bottom: 20px;}
+.portfolio dl dd .sub_title {display: inline-block; margin-left: 20px; font-size: 20px; font-weight: 600;}
+.portfolio .description {}
+.portfolio .description li {line-height: 1.6; margin-bottom: 20px; }
+.portfolio .description li p {margin-bottom: 10px;}
+.portfolio .description li p b {display: block; margin-bottom: 4px; font-weight: bold; border-left: 3px solid #000; padding-left: 10px;}
+.portfolio .description li p b + span {display: block; margin-left: 1em;}
+.portfolio .description li.btns {display: flex; gap: 20px;}
+.portfolio .description li.btns .btn {width: 140px; height: 50px; line-height: 50px; padding: 0 20px; text-align: center; font-weight: bold; border: 2px solid #000; border-radius: 10px;box-sizing: border-box; background-color: #fff; transition: 0.3s; cursor: pointer;}
+.portfolio .description li.btns .btn:hover {background-color: #000; color: #fff;}
+.portfolio .description li.btns .figma {}
+.portfolio .description li.btns .make {}
+.portfolio .description li.btns .origin {}

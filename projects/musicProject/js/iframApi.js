@@ -55,7 +55,7 @@ function onYouTubeIframeAPIReady() {
 
 // }
 // function onPlayerReady(event) {
-  player.unMute();
+  // player.unMute();
 //   //로딩된 후에 실행될 동작을 작성한다(소리 크기,동영상 속도를 미리 지정하는 것등등...)
   // event.target.unMute();
 // }

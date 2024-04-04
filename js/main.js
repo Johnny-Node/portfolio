@@ -55,20 +55,6 @@ hero.addEventListener('click',(e)=>{
       }, 3000);
 })
 
-// hero - title click event
-const title = document.querySelector('.title');
-title.addEventListener('click',()=>{
-  wrap.style.top = innerHeight*(-1) + 'px';
-  page = 1;
-  parts.forEach((part,idx) => {
-    part.classList.remove('now')
-    pages[idx].classList.remove('now');
-  });
-  setTimeout(()=>{
-    parts[page].classList.add('now');
-  },300);
-  pages[page].classList.add('now');
-})
 
 // scroll event
 const wrap = document.querySelector('#wrap');
@@ -111,6 +97,23 @@ document.addEventListener('mousewheel', (e)=>{
 if(page==1){
   about.classList.add('on');
 }
+
+// hero - title click event
+parts[0].classList.add('now');
+const title = document.querySelector('.title');
+title.addEventListener('click',()=>{
+  wrap.style.top = innerHeight*(-1) + 'px';
+  page = 1;
+  parts.forEach((part,idx) => {
+    part.classList.remove('now')
+    pages[idx].classList.remove('now');
+  });
+  setTimeout(()=>{
+    parts[page].classList.add('now');
+  },300);
+  pages[page].classList.add('now');
+})
+
 
 // nav-click event
 pages.forEach((part, idx) => {

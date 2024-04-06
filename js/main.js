@@ -159,8 +159,10 @@ qrArea.addEventListener('click',()=>{
 // portfolio - tap menu
 const pofol_taps = document.querySelectorAll('.portfolio dl dt');
 const pofol_Els = document.querySelectorAll('.portfolio dl dd')
+const mobile_pofol_prev = document.querySelector('.mobile_btns .prev')
+const mobile_pofol_next = document.querySelector('.mobile_btns .next')
 // console.log('pofol : ', pofol_taps[0])
-
+var now_pofol=0;
 pofol_taps.forEach((tap,idx) => {
   tap.addEventListener('click',()=>{
     pofol_taps.forEach(tap => tap.classList.remove('now'))
@@ -169,7 +171,40 @@ pofol_taps.forEach((tap,idx) => {
     })
     pofol_taps[idx].classList.add('now');
     pofol_Els[idx].classList.add('now');
+    now_pofol = idx;
   })
+})
+mobile_pofol_prev.addEventListener('click',()=>{
+  console.log(now_pofol);
+  pofol_taps.forEach(tap => tap.classList.remove('now'))
+  pofol_Els.forEach(el => {
+    el.classList.remove('now');
+  })
+  if(now_pofol<=0){
+    now_pofol = pofol_taps.length - 1;
+    pofol_taps[now_pofol].classList.add('now');
+    pofol_Els[now_pofol].classList.add('now');
+  } else {
+    now_pofol--;
+    pofol_taps[now_pofol].classList.add('now');
+    pofol_Els[now_pofol].classList.add('now');
+  }
+})
+mobile_pofol_next.addEventListener('click',()=>{
+  console.log(now_pofol);
+  pofol_taps.forEach(tap => tap.classList.remove('now'))
+  pofol_Els.forEach(el => {
+    el.classList.remove('now');
+  })
+  if(now_pofol>= pofol_taps.length - 1){
+    now_pofol = 0;
+    pofol_taps[now_pofol].classList.add('now');
+    pofol_Els[now_pofol].classList.add('now');
+  } else {
+    now_pofol++;
+    pofol_taps[now_pofol].classList.add('now');
+    pofol_Els[now_pofol].classList.add('now');
+  }
 })
 
 

@@ -102,6 +102,7 @@ nav:hover ul li.now::after {position: absolute; left: 0; bottom: 0; content: '';
 .portfolio .portfolio_wrapper {
   display: flex; justify-content: center; align-items: center; padding: 40px;
   width: 100%; height: 80%; background-color: #CCDDE440;  box-sizing: border-box;}
+.portfolio .portfolio_wrapper .mobile_btns {display: none;}
 .portfolio dl {display: flex; justify-content: center; position: relative; width: 100%; height: 100%; margin: 0 auto;}
 .portfolio dl dt {position: relative; display: inline-block; padding: 10px 20px; height: 1em; margin-right: 30px; font-size: 24px; font-weight: bold; transition: 0.3s; cursor: pointer;}
 .portfolio dl dt:not(:last-of-type)::after {content: ''; display: inline-block; position: absolute; top:50%; right: -15px;  transform: translateY(-50%); width: 1px; height: 24px; border-right: 1px solid #000;}
@@ -174,18 +175,20 @@ nav:hover ul li.now::after {position: absolute; left: 0; bottom: 0; content: '';
 @media (max-width:760px){
   nav ul {justify-content: center;padding: 10px; gap:10px;}
   nav ul li { font-size: 1em;}
-  .portfolio dl {display: block; padding-top: 20px;}
-  .portfolio dl dt { font-size: 1em; margin-bottom: 1em;}
-  .portfolio dl dt.now {position: absolute; left: 50%; transform: translate(-50%,-100%);}
+  .portfolio .portfolio_wrapper {position: relative;}
+  .portfolio .portfolio_wrapper .mobile_btns {display: flex; justify-content: space-between; position: absolute; top: 6%;left: 50%; transform: translate(-50%,6%); width: 50%; font-size: 30px; font-weight: bold; color:#000;}
+  .portfolio dl {display: flex; flex-direction: column; justify-content: center; align-items: center; gap:30px;}
+  .portfolio dl dt {display: none; font-size: 1em; margin-right: 0;}
+  .portfolio dl dt.now {display: block;}
   .portfolio dl dt:not(:last-of-type)::after {display: none;}
   /* .portfolio dl dd {position: static;} */
-  .portfolio dl dd.now {display: block; font-size: 1em; text-align: center; }
+  .portfolio dl dd.now {display: block; position: static; height: 548px; font-size: 1em; text-align: center; }
   .portfolio dl dd div.monitor {display: flex; justify-content: center; align-items: center; margin-bottom: 1em;}
   .portfolio dl dd div.monitor>img{display: block;}
-  .portfolio dl dd h3 {display: inline-block; padding-right: 10px; font-size: 1.2em;}
+  .portfolio dl dd h3 { font-size: 1.3em; margin-bottom: 0.5em;}
   .portfolio dl dd .sub_title {font-size: 1em;}
   .portfolio dl dd .content>ul {margin-top: 20px; text-align: left;}
-  .portfolio dl dd .content>ul li {display: flex; justify-content: space-around;}
+  .portfolio dl dd .content>ul li {display: flex; justify-content: space-around; gap:20px;}
   .portfolio dl dd .content>ul li:first-child {display: none;}
   .portfolio .description li.btns {justify-content: space-around; gap: 40px;}
   .portfolio .description li.btns .btn a {text-align: center;}

@@ -35,7 +35,7 @@ $(function(){
   $('.party').mouseenter(()=>{
     $('.party .title iconify-icon').addClass('on');
     $('.party_info').stop().slideDown();
-    $('.party_info').addClass('on');    
+
   })
   
   $('.party').mouseleave(()=>{
@@ -44,15 +44,17 @@ $(function(){
       $('.party_info').stop().slideUp();
       $('.party_info').removeClass('on');
     })
-    $('.cont1 .contents .text').mouseenter(()=>{
+    $('.cont1 .contents .text').eq(0).mouseenter(()=>{
       $('.party_info').stop().slideUp();
       $('.party_info').removeClass('on');
     })
     $('.party_info').mouseenter(()=>{
     $('.party .title iconify-icon').addClass('on');
     $('.party_info').addClass('on');
+    $('.party_info').addClass('on');    
   })
   })
+  
   $('.party_info').mouseleave(()=>{
     $('.party .title iconify-icon').removeClass('on');
     if(!$('.party .title iconify-icon').hasClass('on')){

@@ -157,11 +157,11 @@ qrArea.addEventListener('click',()=>{
 // console.log(qr.classList.contains('on'));
 
 // portfolio - tap menu
-const pofol_taps = document.querySelectorAll('.project_title h3');
-const pofol_Els = document.querySelectorAll('.project_contents .content')
+const pofol_taps = document.querySelectorAll('.portfolio dl dt');
+const pofol_Els = document.querySelectorAll('.portfolio dl dd')
 const mobile_pofol_prev = document.querySelector('.mobile_btns .prev')
 const mobile_pofol_next = document.querySelector('.mobile_btns .next')
-console.log('pofol : ', pofol_taps[0])
+// console.log('pofol : ', pofol_taps[0])
 var now_pofol=0;
 pofol_taps.forEach((tap,idx) => {
   tap.addEventListener('click',()=>{

@@ -134,11 +134,11 @@ header .inner .like a,header .inner .basket a {height: 30px;}
 .party .title iconify-icon {position: absolute; top: 0; left: calc(100% + 10px); ; font-size: 1em; line-height: 1; transition: .3s; transform: rotate(360deg);}
 .party .title iconify-icon.on {transform:  rotate(180deg);}
 .party .text_box .text .title {font-size: 3em;}
-.cont1 .party_info {display: none;  text-align: center;background-color: var(--main-black); box-sizing: border-box;}
+.cont1 .party_info {display: none; height: 960px;  text-align: center;background-color: var(--main-black); box-sizing: border-box;}
 .cont1 .party_info a { padding: 105px 0; }
 .cont1 .party_info.on {display: block;}
 /* .cont1 .party_info.off {display: none;} */
-.cont1 .party_info .content {display: inline-block; position: relative;}
+.cont1 .party_info .content {display: inline-block; position: relative; height: 750px;}
 .cont1 .party_info img {width: 100%; box-shadow: 0 0 60px 10px #ffffff25;}
 .cont1 .party_info .text_box {position: absolute; top: 0;right: 0; width: 39%; height: 630px; font-weight: 400; color: var(--main-background);  box-sizing: border-box;  overflow: hidden;}
 .party_info .text_box .text {text-align-last: left; }

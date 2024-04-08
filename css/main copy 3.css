@@ -13,7 +13,7 @@
   font-style: normal;
 }
 
-html, body { height: 100%; font-family: 'Pretendard-Regular'; color:#333; background-color: transparent; overflow: hidden; min-width: 322px;/* scroll-behavior: smooth; */}
+html, body { height: 100%; font-family: 'Pretendard-Regular'; color:#333; background-color: transparent; overflow: hidden; /* scroll-behavior: smooth; */}
 a {text-decoration: none; color: inherit;}
 * {background-color: transparent;}
 video {
@@ -24,7 +24,7 @@ video {
   height: 100%;
   object-fit: cover; /* 동영상이 화면에 맞게 조정될 수 있도록 함 */
 }
-#wrap {position: absolute; top: -200%; left:0; width: 100%; height: 100%; transition:1s; background-color: transparent;}
+#wrap {position: absolute; left:0; width: 100%; height: 100%; transition:1s; background-color: transparent;}
 /* #wrap {position: absolute; top:-953px; left:0; width: 100%; height: 100%; transition:1s; background-color: transparent;} */
 nav {position: fixed; top:0; left:0; width: 100%; height: auto;  transition: 0.4s; z-index: 9999;}
 nav:hover {background-color: #fff; padding-bottom: 10px;}
@@ -98,37 +98,44 @@ nav:hover ul li.now::after {position: absolute; left: 0; bottom: 0; content: '';
 #about .kakao_qr {width: 200px; padding: 120px; background-color: rgba(0, 0, 0, .3); border-radius: 40px 0 0 40px;}
 
 /* portfolio */
-.container .portfolio {display: flex; align-items: center; width: 100vw; height: 100vh;}
+.container .portfolio {display: flex; align-items: center;}
 .portfolio .portfolio_wrapper {
-  padding: 4%; min-height: 414px;
-  width: 100%; height: 80%; background-color: #CCDDE440;  box-sizing: border-box;}
-/* .portfolio .portfolio_wrapper {
   display: flex; justify-content: center; align-items: center; padding: 40px;
-  width: 100%; height: 80%; background-color: #CCDDE440;  box-sizing: border-box;} */
-.portfolio_wrapper .project_title {display: flex; justify-content: center; align-items: center; gap:1rem; }
-.project_title h3 {position: relative; padding: 0.4em 0.8em; font-size: 1.5em; font-weight: bold;}
-.project_title h3:hover {cursor: pointer;}
-.project_title h3.now, .project_title h3:hover {background-color: #000;color: #fff;}
-.project_title h3:not(:last-of-type)::after {content: ''; display: inline-block; position: absolute; top:50%; right: -0.5rem; transform: translateY(-50%); width: 1px; height: 1em; border-right: 1px solid #000;}
-.portfolio_wrapper .project_contents {display: flex; align-items: center; height: 100%; box-sizing: border-box; gap: 2em;}
-.project_contents>div {display: none;}
-.project_contents>div.now {display: flex; justify-content: center; align-items: center; gap:2em;}
-.project_contents>div img{width: 30%;}
-.project_contents .text_box {word-break: keep-all;}
-.project_contents .text_box h3{display: inline-block; padding-right: 1em; line-height: 1.4em; font-size: 1.4em; font-weight: bold;}
-.project_contents .text_box .sub_title {font-size: 1em; line-height: 1.4em;}
-.project_title .mobile_btns {display: none;}
-.portfolio {display: flex; justify-content: center; position: relative; width: 100%; height: 100%; margin: 0 auto;}
+  width: 100%; height: 80%; background-color: #CCDDE440;  box-sizing: border-box;}
+.portfolio .portfolio_wrapper .mobile_btns {display: none;}
+.portfolio dl {display: flex; justify-content: center; position: relative; width: 100%; height: 100%; margin: 0 auto;}
+.portfolio dl dt {position: relative; display: inline-block; padding: 10px 20px; height: 1em; margin-right: 30px; font-size: 24px; font-weight: bold; transition: 0.3s; cursor: pointer;}
+.portfolio dl dt:not(:last-of-type)::after {content: ''; display: inline-block; position: absolute; top:50%; right: -15px;  transform: translateY(-50%); width: 1px; height: 24px; border-right: 1px solid #000;}
+.portfolio dl dt.now {background-color: #000;color: #fff;}
+.portfolio dl dd {
+  display: none; position: absolute; top:50px; left:0px;  width: 100%; height: 100%;
+  /* background: url(../images/nightSky1.jpg) no-repeat center/cover; */ animation: pofolAni 0.4s; overflow: hidden;
+}
+.portfolio dl dd.now {display: flex; justify-content: center; align-items: center; padding: 40px; gap:40px; opacity: 1; box-sizing: border-box;}
+@keyframes pofolAni {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
+}
+.portfolio dl dd.now>div {}
+.portfolio dl dd div.monitor {position: relative; object-fit: contain; text-align: center;}
+.portfolio dl dd div.monitor>img{position: relative; max-width: 562px; width: 100%; z-index: 1; object-fit: contain;}
+
+.portfolio dl dd div.monitor {position: relative;}
+.content { box-sizing: border-box;  word-break: keep-all;}
+.portfolio dl dd h3 {display: inline-block; font-size: 30px; font-weight: bold; margin-bottom: 20px;}
+.portfolio dl dd .sub_title {display: inline-block; margin-left: 20px; font-size: 20px; font-weight: 600;}
 .portfolio .description {}
-.portfolio .description li {margin: 1em 0; line-height: 1.6;}
-.portfolio .description li:nth-child(2) {margin: 1.4em 0;}
-.portfolio .description li p {margin-bottom: 0.6em;}
+.portfolio .description li {line-height: 1.6; margin-bottom: 20px; }
+.portfolio .description li p {margin-bottom: 10px;}
 .portfolio .description li p b {display: block; margin-bottom: 4px; font-weight: bold; border-left: 3px solid #000; padding-left: 10px;}
-.portfolio .description li p span {display: block; margin-left: 13px;}
+.portfolio .description li p b + span {display: block; margin-left: 1em;}
 .portfolio .description li.btns {display: flex; gap: 20px;}
-.portfolio .description li.btns .btn {width: 140px; text-align: center; font-weight: bold; border: 2px solid #000; box-sizing: border-box; background-color: #fff; transition: 0.3s; cursor: pointer;}
+.portfolio .description li.btns .btn {width: 140px; height: 50px; line-height: 50px; text-align: center; font-weight: bold; border: 2px solid #000; border-radius: 10px;box-sizing: border-box; background-color: #fff; transition: 0.3s; cursor: pointer;}
 .portfolio .description li.btns .btn:hover {background-color: #000; color: #fff;}
-.portfolio .description li.btns .btn a {display: block; text-align: center; padding: 0.4em 1em;}
+.portfolio .description li.btns .btn a {display: block; text-align: center;}
+.portfolio .description li.btns .figma {}
+.portfolio .description li.btns .make {}
+.portfolio .description li.btns .origin {}
 
 @media (max-width:1100px){
   .portfolio dl dd h3 {display: block; margin-bottom: 4px;}
@@ -142,6 +149,9 @@ nav:hover ul li.now::after {position: absolute; left: 0; bottom: 0; content: '';
   #about .about_wrapper>ul {padding: 20px;}
   #about colgroup col {min-width: 122px;}
   #about .contact .qr_btn {display: none;}
+  .portfolio dl dt {font-size: 1.2em; padding: 10px; margin-right: 12px;}
+  .portfolio dl dt:not(:last-of-type)::after { right: -6px;}
+  .portfolio dl dd.now {padding: 0;}
 }
 @media (max-width:830px){
   /* hero */
@@ -162,47 +172,33 @@ nav:hover ul li.now::after {position: absolute; left: 0; bottom: 0; content: '';
   #about .education dt {line-height: 1.2; word-break: keep-all;}
   
 } 
-@media (max-width:882px) {
-  .portfolio .project_title {font-size: 12px;}
-}
 @media (max-width:760px){
-  nav:hover li.now {color:#fff;}
-  nav:hover{background-color:transparent;}
   nav ul {justify-content: center;padding: 10px; gap:10px;}
-  nav ul li {padding: 20px 20px 4px; font-size: 1em;}
-  nav:hover ul li.now::after {border-color: #fff;}
-  .container .portfolio {align-items: flex-end; min-height: 615px;}
-  .portfolio .portfolio_wrapper {height: calc((100% - 60px));}
-  
-  .portfolio_wrapper .project_contents { height: calc(100% - 45px);}
-  .project_contents>div.now {flex-direction: column; justify-content: center;}
-  .portfolio .description li:nth-child(1) {text-align: center;}
-  .portfolio .description li:nth-child(2) {display: flex; justify-content: space-around; margin: 1em 0;}
-  .project_contents>div img {width: 40%;}
-  .project_contents .text_box {font-size: 14px;}
-  .project_contents .text_box h3, .project_contents .text_box .sub_title {display: block; text-align: center;}
-  .portfolio .project_title {position: relative; text-align: center; margin-bottom: 1em; height: 33px;}
-  .project_title .mobile_btns {display: flex; justify-content: space-between; align-items: center; position: absolute; top: 0%; left: 50%; transform: translateX(-50%); width: 80%; height: 100%; font-size: 1.8em;}
-  .project_title .mobile_btns:hover {cursor: pointer;}
-  .project_title .mobile_btns iconify-icon {padding: 10px;}
-  .portfolio .project_title h3::after,
-  .portfolio .project_title h3 {display: none;}
-  .portfolio .project_title h3.now {display: block;}
-  .portfolio .description li.btns {justify-content: center; gap: 10%;}
+  nav ul li { font-size: 1em;}
+  .portfolio .portfolio_wrapper {position: relative;}
+  .portfolio .portfolio_wrapper .mobile_btns {display: flex; justify-content: space-between; position: absolute; top: 6%;left: 50%; transform: translate(-50%,20%); width: 80%; font-size: 30px; font-weight: bold; color:#000;}
+  .portfolio dl {display: flex; flex-direction: column; justify-content: flex-start; align-items: center; gap:20px;}
+  .portfolio dl dt {display: none; font-size: 1em; margin-right: 0;}
+  .portfolio dl dt.now {display: block;}
+  .portfolio dl dt:not(:last-of-type)::after {display: none;}
+  /* .portfolio dl dd {position: static;} */
+  .portfolio dl dd.now {position: static; display: flex; flex-direction: column; justify-content: space-between; align-items: center; font-size: 1em; text-align: center; flex:1; gap:0;}
+  .portfolio dl dd.now>div {width: 100%; height: 60%;}
+  .portfolio dl dd div.monitor {display: flex; justify-content: center; margin-bottom: 10px;}
+  .portfolio dl dd.now div.monitor {height: 40%;}
+  .portfolio dl dd.now div.content {display: flex; flex-direction: column; justify-content: center;}
+  .portfolio dl dd div.monitor>img{display: block;}
+  .portfolio dl dd h3 { font-size: 1.3em; margin-bottom: 0.5em;}
+  .portfolio dl dd .sub_title {font-size: 1em; margin-bottom: 1em;}
+  .portfolio dl dd .content>ul {text-align: left;}
+  .portfolio dl dd .content>ul li {display: flex; justify-content: space-around; gap:10px;}
+  .portfolio dl dd .content>ul li:first-child {display: none;}
+  .portfolio .description li.btns {justify-content: space-around; gap: 40px;}
+  .portfolio .description li.btns .btn a {text-align: center;}
   /* .portfolio dl dd .content>ul li p b {border: none;} */
 } 
 @media (max-height:860px){
   .portfolio .description li{
     margin-bottom: 0;
-  }
-} 
-@media (max-height:680px){
-  /* .portfolio .portfolio_wrapper {margin-top: 58px;} */
-  /* .portfolio {padding-top: 60px; box-sizing: border-box;} */
-  .portfolio .portfolio_wrapper  .project_contents{
-    min-height: 420px;
-  }
-  .portfolio .portfolio_wrapper {
-    /* min-height: 516px; */
   }
 } 

@@ -34,28 +34,34 @@ $(function(){
   // cont1 피지컬2 party_inpo area
   $('.party').mouseenter(()=>{
     $('.party .title iconify-icon').addClass('on');
-    $('.party_info').stop().slideDown().addClass('on');
+    $('.party_info').stop().slideDown();
+
   })
   
-  // $('.party').mouseleave(()=>{
-  //   $('.party_info').mouseenter(()=> $('.party_info').stop().slideDown())
-  //   if($('.party_info').hasClass('on')){
-  //     $('.party .title iconify-icon').removeClass('on');
-  //     $('.party_info').stop().slideUp();
-  //     console.log('not on')
-  //   }
-  // })
+  $('.party').mouseleave(()=>{
+    $('.party .title iconify-icon').removeClass('on');
+    $('.cont1 .contents img').mouseenter(()=>{
+      $('.party_info').stop().slideUp();
+      $('.party_info').removeClass('on');
+    })
+    $('.cont1 .contents .text').eq(0).mouseenter(()=>{
+      $('.party_info').stop().slideUp();
+      $('.party_info').removeClass('on');
+    })
+    $('.party_info').mouseenter(()=>{
+    $('.party .title iconify-icon').addClass('on');
+    $('.party_info').addClass('on');
+    $('.party_info').addClass('on');    
+  })
+  })
   
-  // $('.party_info').mouseenter(()=>{
-  //   $('.party .title iconify-icon').addClass('on');
-  // })
-  // $('.party_info').mouseleave(()=>{
-  //   $('.party .title iconify-icon').removeClass('on');
-  //   if(!$('.party .title iconify-icon').hasClass('on')){
-  //     $('.party_info').stop().slideUp();
-  //     $('.party_info').removeClass('on');
-  //   }
-  // })
+  $('.party_info').mouseleave(()=>{
+    $('.party .title iconify-icon').removeClass('on');
+    if(!$('.party .title iconify-icon').hasClass('on')){
+      $('.party_info').stop().slideUp();
+      $('.party_info').removeClass('on');
+    }
+  })
 
   // iconic slide
   $('.side_slide_wrapper').prepend($('.side_slide_wrapper .slide').last());

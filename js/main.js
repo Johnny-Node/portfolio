@@ -2,7 +2,7 @@
 
 /* hero page event */
 // hero - typing event
-const content = "Growing front-end developer ";
+const content = "Growing developer ";
 const text = document.querySelector(".slogan");
 let i=0; 
 

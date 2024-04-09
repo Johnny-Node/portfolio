@@ -109,7 +109,7 @@ $(function(){
 })
 
 
-})  
+
 
 // ariMax - slide
   var swiper1 = new Swiper(".airMax-swiper", {
@@ -161,5 +161,10 @@ $(function(){
     navigation: {
       nextEl: "#sport .swiper-button-next",
       prevEl: "#sport .swiper-button-prev",
-    },
+    }
+    
   });
+  $('a').click((e)=>{
+    e.preventDefault();
+  })
+})  

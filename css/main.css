@@ -24,7 +24,7 @@ video {
   height: 100%;
   object-fit: cover; /* 동영상이 화면에 맞게 조정될 수 있도록 함 */
 }
-#wrap {position: absolute; top: -200%; left:0; width: 100%; height: 100%; transition:1s; background-color: transparent;}
+#wrap {position: absolute; top: 0%; left:0; width: 100%; height: 100%; transition:1s; background-color: transparent;}
 /* #wrap {position: absolute; top:-953px; left:0; width: 100%; height: 100%; transition:1s; background-color: transparent;} */
 nav {position: fixed; top:0; left:0; width: 100%; height: auto;  transition: 0.4s; z-index: 9999;}
 nav:hover {background-color: #fff; padding-bottom: 10px;}
@@ -69,7 +69,7 @@ nav:hover ul li.now::after {position: absolute; left: 0; bottom: 0; content: '';
 #about .about_wrapper {height: 0; display: flex; justify-content: center; align-items: center; gap:80px; box-sizing: border-box;  transition: 1.2s; overflow: hidden;}
 #about.now .about_wrapper {height: 100%;}
 #about .about_wrapper .id_img{max-width: 300px; object-fit:fill;}
-#about .about_wrapper>ul {width: 600px; background: #ffffff90; padding: 40px; border-radius: 40px 0 40px 0;}
+#about .about_wrapper>ul {width: 600px; background: #ffffff90; padding: 40px; border-radius: 40px 0 40px 0; box-sizing: border-box;}
 #about .about_wrapper>ul>li {margin-bottom:30px; padding-bottom: 30px; border-bottom: 2px solid #33333330;}
 #about .about_wrapper>ul>li:last-child {border: none; margin-bottom: 0;}
 #about .about_wrapper>ul h2 {margin-bottom: 10px; font-size: 24px; font-weight: 900; color: #4465d0;}
@@ -196,6 +196,17 @@ nav:hover ul li.now::after {position: absolute; left: 0; bottom: 0; content: '';
     margin-bottom: 0;
   }
 } 
+
+@media (max-height: 760px) {
+  body{font-size: 14px;}
+  /* #about .about_wrapper {display: block;} */
+  #about .about_wrapper>ul {height: 100%;}
+  #about .about_wrapper>ul>li {margin-bottom: 1em; padding-bottom: 1em;}
+  #about .about_wrapper>ul h2 {font-size: 1.4em;}
+  #about .about_wrapper>ul .sub_title {font-size: 1.2em;}
+  #about .contact th {font-size: 1.2em;}
+  #about .skills li {margin-bottom: 0;}
+}
 @media (max-height:680px){
   /* .portfolio .portfolio_wrapper {margin-top: 58px;} */
   /* .portfolio {padding-top: 60px; box-sizing: border-box;} */

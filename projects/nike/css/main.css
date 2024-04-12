@@ -30,12 +30,13 @@ a{display: block;}
 /* .test {position: fixed; top:0; left: 50%; transform: translateX(-50%); width: 1660px; height: 30px; background-color: rgba(172, 255, 47, 0.336);} */
 
 #wrap {width: 100%;}
+#wrap.behind {width: 100vw; height: 100vh; overflow: hidden;}
 .headerContainer { background-color: var(--sub-background); align-items: center; }
 /* .headerContainer>* {padding: 0 30px;} */
 .brandService {width: 100%; height: 36px; box-sizing: border-box;}
 .brandService .inner {display: flex; justify-content: space-between; height: 100%;}
 .brandService .familySite {height: 100%; display: flex; justify-content: space-between; align-items: center;}
-.brandService .familySite figure{display: flex; gap: 0 20px;}
+.brandService .familySite figure {display: flex; gap: 0 20px;}
 .brandService .service ul{display: flex; align-items: center; height: 36px; gap: 16px; font-size: 0.875em;}
 .brandService .service ul li {height: 100%;}
 .brandService .service ul li a {height: 100%; line-height: 36px;}
@@ -84,16 +85,17 @@ header .inner .search {position: relative;}
   .search iconify-icon:hover {
     background-color: var(--main-gray); border-radius: 50%;
   }
-header .inner .like a,header .inner .basket a {height: 30px;}
+header .inner .like a,header .inner .basket a {}
 .menuBtn {display: none;}
 .bottom {height: 60px; padding: 10px 0; box-sizing: border-box; background-color: var(--sub-background);}
 .bottom p {height: 20px; line-height: 20px; text-align: center; font-size: 1em;}
 .bottom p:last-child {font-size: 0.875em;}
+.bottom p a {display: inline-block;}
 .bottom p span {text-decoration: underline; font-weight: bold;}
 /* container */
 .main { position: relative; text-align: center; width: 100%; max-height: 740px; background-color: #000;}
 .main video {width: 100%; max-height: 740px;}
-.main img { position: absolute; top: 0px; left: 0;right: 0; margin: 0 auto; display: none; width: 100%; max-height: 740px;}
+.main img { position: absolute; top: 0px; left: 0;right: 0; margin: 0 auto; display: none; height: 100%;}
 .main .text{display: none; position: absolute; bottom: 10%; left: 0;right: 0; margin:0 auto; color: #fff;text-align: center; letter-spacing: 0.24em;}
 .main .text span {display: block; font-weight: bold; font-size: inherit;}
 .main .text iconify-icon {display: none; position: absolute; left: 50%; transform: translateX(-50%); top:100%; animation: scrollAni 1s ease-in-out infinite; color:inherit; font-size: 3em; }
@@ -151,7 +153,7 @@ header .inner .like a,header .inner .basket a {height: 30px;}
 /* new jeans */
 .cont2 {}
 .cont2 .contents {display: flex; position: relative;}
-.cont2 .contents img {width: 60%; object-fit: contain: ;;}
+.cont2 .contents img {width: 60%;}
 .cont2 .contents .text_box{
   position: relative; width: 40%;  flex: 1; font-weight: bold; background-color: #F4EDF6; box-sizing: border-box;}
 .cont2 .text {
@@ -205,9 +207,9 @@ header .inner .like a,header .inner .basket a {height: 30px;}
 .easyOn .contents a {}
 .easyOn img {width: 100%;}
 .easyOn .title {margin-top: 60px; font-size: 2em; font-weight: bold;}
-.easyOn .description {font-size: 1em; margin: 2em 0;}
+.easyOn .description {font-size: 1em; margin: 2em 0; word-break: keep-all;}
 .easyOn .btn {
-  width: 240px; height: 2.4em; line-height: 2.4em; margin: 0 auto;
+  width: 20%; height: 2.4em; line-height: 2.4em; margin: 0 auto;
   font-size: 1em; font-weight: bold; color:var(--main-black); background-color: var(--main-background);
   border: 2px solid #000; border-left-color: transparent; border-right-color: transparent; transition: 0.4s;}
 .easyOn .btn:hover {background-color: var(--main-black); color: var(--main-background); transform: scale(1.2);}
@@ -363,8 +365,9 @@ a img {transition: 0.3s;}
 
 @media (max-width: 1080px) {
   body {font-size: 12px;}
-  nav>ul.gnb {display: none;}
-  .menuBtn {display: block;}
+  header>.inner {gap: 1.4em;}
+  nav>ul.gnb>li>a {padding: 0 0.6em;}
+  /* nav>ul.gnb {display: none;} */
   .main .text {font-size: 0.8em;}
   .main .text {bottom: 12%;}
   .main .text iconify-icon {animation: scrollAni 1s ease-in-out infinite;}
@@ -404,14 +407,44 @@ a img {transition: 0.3s;}
 @media (max-width: 780px){
   .brandService {display: none;}
   header {padding: 0;}
+  nav>ul.gnb {display: none;}
+  .menuBtn {display: block;}
+  .m_sub_menu_area.off {display: none;}
+  .m_sub_menu_area {position: relative; display: flex; flex-direction: column;  width: 320px; height: 100%; padding: 50px 30px 150px 36px; position: absolute; top: 0; right: -100%; background-color: #fff; font-size: 16px; z-index: 999; box-sizing: border-box; overflow-y: scroll; overflow-x: hidden;}
+  .m_sub_menu_area iconify-icon {font-size: 18px;}
+  .m_sub_menu_area .family {margin: 1em 0;}
+  .m_sub_menu_area .family figure {display: flex; align-items: center; gap: 1em; font-weight: 500; margin-bottom: 1em;}
+  .m_sub_menu_area .family img {width: 30px;}
+  .m_sub_menu_area .memeber_join {margin-top: 60px; font-size: 16px;  line-height: 1.6;}
+  .m_sub_menu_area .memeber_join p {word-break: keep-all; color:#707072;  font-weight: 600;}
+  .m_sub_menu_area .memeber_join b {margin-left: 0.4em; color:#111;}
+  .m_sub_menu_area .memeber_join .btns {margin: 20px 0 40px;}
+  .m_sub_menu_area .memeber_join .btns a {display: inline-block; margin-right: 1em; padding: 4px 16px;  font-size: 16px; color: #111; border: 1px solid #111; border-radius: 20px;}
+  .m_sub_menu_area .memeber_join .btns a:first-child {background-color: #111; color:#fff;}
+  .m_sub_menu_area .memeber_join .btns a:last-child {background-color: #fff; color:#111;}
+  /* .m_sub_menu_area .goto {margin-bottom: 150px;} */
+  .m_sub_menu_area .goto li{padding-top: 10px; line-height: 24px;}
+  .m_sub_menu_area .goto li iconify-icon {font-size: 1.5em; padding-right: 10px;}
+  .m_sub_menu_area .goto li iconify-icon svg {display: flex; width: auto; justify-content: center; align-items: center;}
+  .m_sub_back {line-height: 19px; padding: 4px 0; margin-bottom: 24px; font-weight: 600; color:#111;}
+  .m_sub_back iconify-icon { padding-right: 20px; transform: translateY(-1px);}
+  .m_sub_menu_area .m_sub_title {margin-bottom: 1.6em; padding: 4px 0;}
+  .m_sub_title>a{display: flex; justify-content: space-between; align-items: center; font-size: 24px; font-weight: 500; color:#111;}
+  .m_sub_menu_area .option.m_sub_depth>a {display: flex; justify-content: space-between; align-items: center;}
+  .m_sub_menu_area .option>a {line-height: 20px; margin-bottom: 16px; font-size: 16px; font-weight: 600; color:#707072;}
+  .m_sub_category, .m_sub_last_option {position: absolute; top: 0; left: 100%; width: 100%; height: 100%; background-color: #fff; padding:50px 30px 150px 36px; z-index: 2; box-sizing: border-box;}
+  /* .m_sub_menu_area>ul>li.m_sub_title {display: none;} */
+  .m_sub_menu_area .m_sub_close{position: absolute; top: 10px; right: 20px; z-index: 1; cursor: pointer;}
+  .m_sub_menu_area .m_sub_close iconify-icon {font-size: 1.8em;}
+  .m_sub_bg {display: none; position: fixed; top: 0; left: 0; width: 100vh; height: 100vh; background-color: #11111190; z-index: 20;}
   .main .text {bottom: 18%;}
   .physical .contents {display: block;}
   .physical .contents>.text_box {position: static; width: 100%; background-color: transparent; text-align: center;}
   .cont1 .party_info {display: block;}
   .cont1 .text .qr_text {display: block;}
-  .cont1 .text .qr_text img {width: 10%; height: auto;}
+  .cont1 .text .qr_text img {width: 10%; height: auto; margin-bottom: 1em;}
   .cont1 .text .qr_text .btns {display: block;}
-  .cont1 .text .qr_text .btns>* {display: inline-block; width: 30%; padding:4px 0.6em; margin-top: 4px; background-color: green;}
+  .cont1 .text .qr_text .btns>* {display: block; width: 30%; padding:0.6em; margin: 0.4em auto; background-color: #111; color:#fff; word-break: keep-all;}
   .physical .contents>img.pc {display: none;}
   .physical .contents>img.mobile {display: block;}
   .party_info .text .title {display: flex; justify-content: center;  font-size: 1.4em;}
@@ -443,6 +476,12 @@ a img {transition: 0.3s;}
   .footer_bottom .bottom_box {display: block;}
 } 
 @media (max-width:600px) {
+  .inner {padding: 0 2em;}
+  header>.inner {gap:1em;}
+  header>.inner h1 img {width: 40px;}
+  .search input {display: none;}
+  .search iconify-icon {position: static; width: auto;}
+  header .inner .like a, header .inner .basket a {} 
   .iconic .side_slide_wrapper {display: none;}
   .center_slide_wrapper .slide span {font-size: 1.4em;}
   .iconic .center_slide_wrapper .btns {

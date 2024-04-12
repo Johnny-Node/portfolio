@@ -108,9 +108,54 @@ $(function(){
       
   }
 })
+//(mobile)전체메뉴 아이콘 클릭 이벤트
+  $('.menuBtn').click(()=>{
+    $('.m_sub_menu_area').removeClass('off').animate({
+    right : 0
+    },300);
+    $('.m_sub_bg').fadeIn(500);
+    $('#wrap').addClass('behind');
+  })
+//(mobile)전체메뉴 닫기
+  $('.m_sub_bg').click(()=>{
+      $('.m_sub_menu_area').animate({
+        right : '-100%'
+      },300,()=>{
+        $('.m_sub_menu_area').addClass('off');
+      });    
+      $('.m_sub_bg').fadeOut(500);
+      $('#wrap').removeClass('behind');
+  })
+  $('.m_sub_close').click(()=>{
+    $('.m_sub_menu_area').animate({
+      right : '-100%'
+    },300,()=>{
+      $('.m_sub_menu_area').addClass('off');
+    }); 
+    $('.m_sub_bg').fadeOut(500);
+    $('#wrap').removeClass('behind');
+  })
+// (mobile) 메뉴 이동 (depth 증가)
+    $('.m_sub_depth a').click((e)=>{
+      $(e.currentTarget).next().animate({
+        left : 0
+      },300,()=>{
+        $('.m_sub_menu_area').css('overflow-y','hidden');
+      })
+  })
 
+  //(mobile) 메뉴 되돌리기 (depth 감소)
+  $('.m_sub_back').click((e)=>{
+    console.log($(e.currentTarget).parent())
+    $(e.currentTarget).parent().animate({
+      left : '100%'
+    },300,()=>{
+      if($(e.currentTarget).parent().hasClass('m_sub_category')){
+        $('.m_sub_menu_area').css('overflow-y','');
+      }
+    })
+  })
 
-})  
 
 // ariMax - slide
   var swiper1 = new Swiper(".airMax-swiper", {   
@@ -183,4 +228,5 @@ $(function(){
         spaceBetween: 20
       }
     }
-  });
+  })
+})

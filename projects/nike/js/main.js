@@ -37,6 +37,7 @@ $(function(){
     $('.party_info').stop().slideDown().addClass('on');
   })
   
+  
   $('.party').mouseleave(()=>{
     $('.party_info').mouseenter(()=> $('.party_info').stop().slideDown())
     if($('.party_info').hasClass('on')){
@@ -109,12 +110,11 @@ $(function(){
 })
 
 
-
+})  
 
 // ariMax - slide
-  var swiper1 = new Swiper(".airMax-swiper", {
-    slidesPerView: 3,
-    spaceBetween: 20,
+  var swiper1 = new Swiper(".airMax-swiper", {   
+    slidesPerView: 1,
     loop: true,
     pagination: {
       clickable: true
@@ -123,11 +123,16 @@ $(function(){
       nextEl: "#airMax .swiper-button-next",
       prevEl: "#airMax .swiper-button-prev",
     },
+    breakpoints : {
+      600 : {
+        slidesPerView: 3,
+        spaceBetween: 20
+      }
+    }
   });
 // trend - slide
   var swiper2 = new Swiper(".trend-swiper", {
-    slidesPerView: 3,
-    spaceBetween: 20,
+    slidesPerView: 1,
     loop: true,
     pagination: {
       clickable: true
@@ -136,11 +141,16 @@ $(function(){
       nextEl: "#trend .swiper-button-next",
       prevEl: "#trend .swiper-button-prev",
     },
+    breakpoints : {
+      600 : {
+        slidesPerView: 3,
+        spaceBetween: 20
+      }
+    }
   });
 // spring - slide
   var swiper3 = new Swiper(".spring-swiper", {
-    slidesPerView: 3,
-    spaceBetween: 20,
+    slidesPerView: 1,
     loop: true,
     pagination: {
       clickable: true
@@ -149,11 +159,16 @@ $(function(){
       nextEl: "#spring .swiper-button-next",
       prevEl: "#spring .swiper-button-prev",
     },
+    breakpoints : {
+      600 : {
+        slidesPerView: 3,
+        spaceBetween: 20
+      }
+    }
   });
 // sport - slide
   var swiper4 = new Swiper(".sport-swiper", {
-    slidesPerView: 3,
-    spaceBetween: 20,
+    slidesPerView: 1,
     loop: true,
     pagination: {
       clickable: true
@@ -161,10 +176,11 @@ $(function(){
     navigation: {
       nextEl: "#sport .swiper-button-next",
       prevEl: "#sport .swiper-button-prev",
+    },
+    breakpoints : {
+      600 : {
+        slidesPerView: 3,
+        spaceBetween: 20
+      }
     }
-    
   });
-  $('a').click((e)=>{
-    e.preventDefault();
-  })
-})  
